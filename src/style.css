@@ -1,0 +1,330 @@
+:root {
+  /* ====== BREAKPOINTS ====== */
+  --bp-max-xs: 575px;
+  --bp-min-sm: 576px;
+  --bp-min-md: 768px;
+  --bp-min-lg: 992px;
+  --bp-min-xl: 1200px;
+  --bp-min-xxl: 1400px;
+
+  /* ====== COLORS - DARK THEME ====== */
+  --color-background: #000000ec;
+  --color-background-navbar: #000000ec;
+  --color-primary: #6fb7d7;
+  --color-secondary: #8bf710ec;
+  --color-tertiary: #0C356A;
+  --color-text: #fff;
+  --color-navbar-shadow-inset: rgba(63, 64, 65, 0.363);
+  --color-navbar-shadow-glow: rgba(124, 215, 221, 0.22);
+
+  /* ====== COLORS - LIGHT THEME ====== */
+  --color-background-light: #ffffff;
+  --color-text-light: #000000;
+  --color-primary-light: #2563eb;
+  --color-secondary-light: #000000;
+  --color-tertiary-light: #4a8cf7;
+  --color-navbar-shadow-inset-light: rgba(0, 0, 0, 0.1);
+  --color-navbar-shadow-glow-light: rgba(37, 99, 235, 0.4);
+
+  /* ====== TYPOGRAPHY ====== */
+  --font-family-body: "Oxanium", cursive;
+  --font-size-em: 1.2em;
+  --font-size-mammoth: 2.488rem;
+  --font-size-xhuge: 2.074rem;
+  --font-size-huge: 1.728rem;
+  --font-size-xlarge: 1.44rem;
+  --font-size-large: 1.2rem;
+  --font-size-normal: 1rem;
+  --font-size-tiny: 0.579rem;
+
+  --line-height: 1.5;
+  --line-height-thin: 1.25;
+  --font-weight-bold: 600;
+  --font-weight-semibold: 500;
+  --font-weight-normal: 400;
+  --font-weight-light: 300;
+  --font-weight-thin: 200;
+
+  /* ====== TEMPLATE WIDTHS ====== */
+  --template-width-sm: 33.3333%;
+  --template-width-md: 50%;
+  --template-width-lg: 100%;
+}
+
+/* ====== LIGHT THEME ====== */
+.light-theme {
+  --color-background: var(--color-background-light);
+  --color-text: var(--color-text-light);
+  --color-primary: var(--color-primary-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-tertiary: var(--color-tertiary-light);
+  --color-navbar-shadow-inset: var(--color-navbar-shadow-inset-light);
+  --color-navbar-shadow-glow: var(--color-navbar-shadow-glow-light);
+}
+
+/* ====== GLOBAL STYLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h2 {
+  font-size: var(--font-size-xhuge);
+  color: var(--color-text);
+  text-align: center;
+  margin: 10px;
+}
+
+/* ====== TEMPLATE (MEME CARD) ====== */
+.template {
+  width: var(--template-width-sm);
+  display: inline-block;
+  border: 20px solid transparent;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.template .meme {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.template .meme:hover {
+  filter: grayscale(100%);
+  transform: scale(1.05);
+}
+
+/* Hover caption overlay */
+.hover-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--color-text);
+  text-align: center;
+  font-size: var(--font-size-large);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.template:hover .hover-caption {
+  opacity: 1;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  background-color: var(--color-background-navbar);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  margin: 15px auto 40px;
+  width: 90%;
+  border-radius: 50px;
+  box-shadow:
+    inset var(--color-navbar-shadow-inset) -10px -14px 16px,
+    var(--color-navbar-shadow-glow) 1px -2px 20px 20px;
+  color: var(--color-text);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: var(--font-size-large);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* ====== THEME TOGGLE ====== */
+.theme-toggle {
+  background: transparent;
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
+  min-width: 100px;
+  text-align: center;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  transform: scale(1.05);
+}
+
+/* ====== INPUT & BUTTONS ====== */
+input {
+  width: 250px;
+  height: 40px;
+  margin: 10px 5px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-size: var(--font-size-large);
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+::placeholder {
+  color: var(--color-secondary);
+  opacity: 0.7;
+}
+
+.generatebutton,
+.backbtn {
+  font-size: var(--font-size-large);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--color-secondary);
+  background-color: var(--color-tertiary);
+  border: 1px solid var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generatebutton:hover,
+.backbtn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-tertiary);
+  transform: translateY(-2px);
+}
+
+/* ====== PAGINATION ====== */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 5rem;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pagination button {
+  background: var(--color-background);
+  color: var(--color-text);
+  padding: 6px 12px;
+  border: 1px solid var(--color-text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background: var(--color-primary);
+  color: var(--color-background);
+  transform: scale(1.05);
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: 12px 0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1200px) {
+  .template {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .template {
+    width: 100%;
+    border: 10px solid transparent;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 95%;
+    padding: 12px 20px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    font-size: var(--font-size-tiny);
+    min-width: 80px;
+    padding: 6px 10px;
+  }
+
+  .memebnao img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .generatebutton, .backbtn {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  .pagination {
+    margin-bottom: 20px;
+  }
+}
+

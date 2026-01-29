@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================
+   ✨ Dynamic Meme Generator – Custom Styles & Animations
+   Author: Divjot Singh Arora
+   =========================================================== */
+
+/* ---------- 🎞️ Animations ---------- */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 2s linear infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in;
+}
+
+/* ---------- 📱 Responsive Layouts ---------- */
+@media (max-width: 768px) {
+  .dynamic-meme-main-content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dynamic-meme-header h1 {
+    font-size: 2rem !important;
+  }
+
+  .dynamic-meme-category-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dynamic-meme-btn-group {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* ---------- ✋ Hover Effects ---------- */
+.dynamic-meme-category-btn:hover {
+  border-color: #667eea !important;
+  background: #f7fafc !important;
+  transition: all 0.3s ease;
+}
+
+.dynamic-meme-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.dynamic-meme-example-item:hover {
+  background: #edf2f7 !important;
+  border-color: #667eea !important;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ---------- 🎯 Focus Styles ---------- */
+.dynamic-meme-input:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ---------- 🚫 Disabled State ---------- */
+.dynamic-meme-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ---------- 🧩 Smooth Transitions ---------- */
+.dynamic-meme-btn,
+.dynamic-meme-category-btn,
+.dynamic-meme-input {
+  transition: all 0.25s ease-in-out;
+}
+
+/* History heading spacing to avoid overlap with fixed navbar */
+.history-heading {
+  margin-top: 24px; /* default spacing for small screens */
+}
+
+@media (min-width: 670px) {
+  /* For viewports >= 670px ensure the heading sits below the fixed navbar */
+  .history-heading {
+    margin-top: 80px; /* large enough to clear the navbar and some breathing room */
+  }
+}
