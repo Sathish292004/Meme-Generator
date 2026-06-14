@@ -1,13 +1,5 @@
 # 😂 Meme Generator
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,vite,javascript,tailwind,git,github,vscode" />
-</p>
-
-<p align="center">
-  Create, customize, and download memes instantly with a modern React-powered Meme Generator.
-</p>
-
 ---
 
 ## 🚀 Live Demo
