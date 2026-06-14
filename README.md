@@ -165,7 +165,7 @@ Add your screenshots here:
 
 ## 👨‍💻 Author
 
-### Sathish Kumar
+### Sathish Kumar B
 
 Java & Full Stack Developer
 
