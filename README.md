@@ -140,7 +140,7 @@ http://localhost:5173
 
 ## 📸 Screenshots
 
-Add your screenshots here:
+![Meme Generator](https://i.postimg.cc/mD9C02GK/Screenshot-2026-06-21-143548.png)
 
 ```md
 ![Home](screenshots/home.png)
