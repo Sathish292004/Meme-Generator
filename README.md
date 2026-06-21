@@ -140,15 +140,10 @@ http://localhost:5173
 
 ## 📸 Screenshots
 
-![Meme Generator](https://i.postimg.cc/mD9C02GK/Screenshot-2026-06-21-143548.png)
+### Meme Generator
 
-```md
-![Home](screenshots/home.png)
+![Meme Generator] (https://i.postimg.cc/mD9C02GK/Screenshot-2026-06-21-143548.png)
 
-![Meme Generator](screenshots/meme-generator.png)
-
-![Export Options](screenshots/export.png)
-```
 
 ---
 
