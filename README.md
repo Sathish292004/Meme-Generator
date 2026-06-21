@@ -142,7 +142,7 @@ http://localhost:5173
 
 ### Meme Generator
 
-![Meme Generator] (https://i.postimg.cc/mD9C02GK/Screenshot-2026-06-21-143548.png)
+![Meme Generator](https://i.postimg.cc/mD9C02GK/Screenshot-2026-06-21-143548.png)
 
 
 ---
